@@ -7,8 +7,7 @@
         {
             "name": "peliculas",
             "request": "launch",
-            "type": "dart",
-            "program" : "lib/src/main.dart"
+            "type": "dart"
         }
     ]
 }

@@ -42,18 +42,25 @@ class MovieHorizontal extends StatelessWidget {
   }
 
   Widget _crearTarjeta(BuildContext context, Pelicula pelicula){
+
+    pelicula.uniqueID = '${pelicula.id}-poster';
+
+
     final peliculaTarjeta = Container(
         margin: EdgeInsets.only(right: 15.0),
            child: Column(
              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: FadeInImage(
-                  placeholder: AssetImage("assets/no-image.jpg"),
-                  image: NetworkImage(pelicula.getPosterImg()),
-                  fit: BoxFit.cover,
-                  height: 160,),
+              Hero(
+                tag: pelicula.uniqueID,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: FadeInImage(
+                    placeholder: AssetImage("assets/no-image.jpg"),
+                    image: NetworkImage(pelicula.getPosterImg()),
+                    fit: BoxFit.cover,
+                    height: 160,),
+                ),
               ),
               Text(
               pelicula.title,
@@ -74,7 +81,7 @@ class MovieHorizontal extends StatelessWidget {
       );
   }
 
-  List<Widget> _tarjetas(context) {
+  /*List<Widget> _tarjetas(context) {
     
     return peliculas.map((pelicula) {
 
@@ -104,5 +111,5 @@ class MovieHorizontal extends StatelessWidget {
         ),
       );
     }).toList();
-  }
+  }*/
 }

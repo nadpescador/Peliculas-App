@@ -15,6 +15,9 @@ class Peliculas {
 }
 
 class Pelicula {
+
+  String uniqueID;
+
   int voteCount;
   bool video;
   String posterPath;
